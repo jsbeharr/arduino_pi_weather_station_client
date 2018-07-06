@@ -21,6 +21,7 @@ class App extends Component {
     return (
       <div className='App'>
         <div class='info_panel'>
+          <p>About</p>
           <a 
             href='https://gitlab.eecs.umich.edu/rubinz/arduino_pi_weather_station'
             target='_blank'
@@ -31,7 +32,6 @@ class App extends Component {
               alt='git lab icon' /> 
           </a>
         </div>
-        <Banner color={this.state.wetness} image={this.state.weather_image}/>
         <div className="content">
           <WeatherBox />
         </div>
