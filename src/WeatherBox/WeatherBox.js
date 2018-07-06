@@ -11,7 +11,7 @@ const weather_box = (props) => {
 
   return (
     <div className='WeatherBox'>
-      <div class='card'>
+      <div className='card'>
         <header>
           <p>{temperature}&deg;F</p>
           <p>{moment().format('dddd')}</p>

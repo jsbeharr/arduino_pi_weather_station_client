@@ -19,6 +19,11 @@
   max-height: 30px;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
 
 body {
   margin: 0px;

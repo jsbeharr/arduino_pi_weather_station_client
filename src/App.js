@@ -39,6 +39,7 @@ class App extends Component {
         <div className="content">
           <WeatherBox
             current_weather={this.state.weather_now}  />
+          <DetailBox />
         </div>
       </div>
     );
