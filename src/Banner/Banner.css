@@ -1,7 +1,7 @@
 .Banner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  background-color: #2196F3;
+  background-color: #2194f3;
   font-size: 1.2em;
 }
 
