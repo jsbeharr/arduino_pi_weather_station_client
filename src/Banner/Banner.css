@@ -1,40 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
-
 .Banner {
-  background-color: #0095de;
-  padding: 40px;
-  padding-top: 60px;
-  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  background-color: #2196F3;
 }
 
-#weather_img {
-  max-width: 250px; 
-  max-height: 250px;
+.weather_img > img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%
+  margin: auto;
+  max-width: 15em; 
+  max-height: 15em;
 }
-
-.header {
-  position: relative;
-  display: inline;
-  color: #1c1c1c;
-  font-size: 30px;
-  font-family: 'Karla', sans-serif;
-  font-weight: bold;
-  overflow: auto;
-  line-height: 1em;
-  text-align: left;
-}
-
-#title {
-  clear: left;
-  float: left;
-}
-
-#location_time {
-  float: right;
-  clear: right;
-}
-
