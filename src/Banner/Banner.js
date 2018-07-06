@@ -1,6 +1,6 @@
 import React from 'react';
 import './Banner.css';
-import Clock from 'react-live-clock'
+import Clock from 'react-live-clock';
 
 const banner = (props) => {
   return (

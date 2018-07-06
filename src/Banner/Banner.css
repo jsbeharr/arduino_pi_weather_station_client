@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   background-color: #2196F3;
+  font-size: 1.2em;
 }
 
 .weather_img > img {
@@ -9,4 +10,12 @@
   margin: auto;
   max-width: 15em; 
   max-height: 15em;
+}
+
+#title {
+  padding: 1.5em;
+}
+
+#location_time { 
+  padding: 1.5em;
 }
