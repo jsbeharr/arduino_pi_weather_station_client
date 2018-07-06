@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+
+#git_lab {
+  max-width: 40px; 
+  max-height: 40px;
+}
+
+.info_panel {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px 40px;
+}
+
+.info_panel p {
+  display: inline;
+  font-family: 'Karla', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+p {
+  font-family: 'Karla', sans-serif;
+}
