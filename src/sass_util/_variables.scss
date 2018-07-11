@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 @import "~react-vis/dist/style.css";
 
+// Colors
 $primary-color: #2194f3;
 $secondary-color: #f37f21;
-$accent-color: #3c3c3c;
+$side-container-color: #3c3c3c;
 $primary-text-color: #212121;
 $primary-font: 'Roboto', sans-serif;
+
+// For any card 
+$box-shaddow: 0 4px 8px 0 rgba(0,0,0,0.2);

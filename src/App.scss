@@ -1,4 +1,5 @@
 @import "sass_util/variables.scss";
+@import 'sass_util/base';
 
 .info_panel {
   p {
@@ -10,7 +11,7 @@
   padding: .4em 2.5em;
   text-align: right;
   color: $secondary-color;
-  background-color: $accent-color;
+  background-color: $side-container-color;
 }
 
 #git_lab {
@@ -20,12 +21,5 @@
 
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
-}
-
-
-body {
-  margin: 0px;
-  font-family: $primary-font;
-  color: $primary-text-color;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
