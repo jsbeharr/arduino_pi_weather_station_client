@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import git_lab_logo from './images/git_lab_logo.png';
-import cloudy_rain  from './images/cloudy_rain.png';
+import weather_wind from './images/weather-wind.png';
 import Banner from './Banner/Banner';
 import WeatherBox from './WeatherBox/WeatherBox';
 import DetailBox from './DetailBox/DetailBox';
@@ -16,7 +16,7 @@ class App extends Component {
       'wind_speed'    :   3.5,
       'wetness'       :   1020,
     },
-    'weather_image' :   cloudy_rain,
+    'weather_image' :   weather_wind,
   };
 
   render() {
