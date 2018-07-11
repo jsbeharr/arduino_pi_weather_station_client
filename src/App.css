@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@import "~react-vis/dist/style.css";
 
 .info_panel {
   display: block;
@@ -21,7 +22,7 @@
 
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
 }
 
 
