@@ -1,11 +1,13 @@
+@import "../sass_util/variables.scss";
+
 .Banner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  background-color: #2194f3;
+  background-color: $primary-color;
   font-size: 1.2em;
 }
 
-.weather_img > img {
+.weather_img img {
   display: block;
   margin: auto;
   max-width: 15em; 
