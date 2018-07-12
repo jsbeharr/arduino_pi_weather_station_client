@@ -6,7 +6,7 @@ const banner = (props) => {
   return (
     <div className='Banner'>
         <p id='title'>Arduino Pi Weather Station</p>
-        <div className='weather_img'>
+        <div className='weather_img_container'>
           <img src={props.image} alt='weather'/>
         </div>
         <div id='location_time'>

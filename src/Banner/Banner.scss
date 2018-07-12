@@ -1,23 +1,40 @@
 @import "../sass_util/variables";
 
-.Banner {
-  display: grid;
-  grid-template-columns: $grid-column-responsive;
-  background-color: $primary-color;
-  font-size: 1.2em;
-}
-
-.weather_img img {
-  display: block;
-  margin: auto;
-  width: 15em; 
-  height: 15em;
+.weather_img_container {
+  img {
+    display: block;
+    margin: auto;
+    width: auto;
+    height: 100%;
+  }
+  padding: 2em;
+  grid-area: weather_img_container;
 }
 
 #title {
   padding: 1.5em;
+  grid-area: title;
 }
 
 #location_time { 
   padding: 1.5em;
+  grid-area: location_time;
+}
+
+.Banner {
+  background-color: $primary-color;
+  font-size: 1.2em;
+  display: grid;
+  grid-template-areas: 
+    "title"
+    "weather_img_container"
+    "location_time"
+}
+
+  @media only screen and (min-width: 600px)   {
+    .Banner {
+        grid-template-columns: auto auto auto;
+        grid-template-areas:
+  "title  weather_img_container  location_time";
+    }
 }
