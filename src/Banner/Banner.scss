@@ -4,10 +4,9 @@
   img {
     display: block;
     margin: auto;
-    width: auto;
-    height: 100%;
+    width: 14em;
+    height: 14em;
   }
-  padding: 2em;
   grid-area: weather_img_container;
 }
 
@@ -35,6 +34,6 @@
     .Banner {
         grid-template-columns: auto auto auto;
         grid-template-areas:
-  "title  weather_img_container  location_time";
+          "title  weather_img_container  location_time";
     }
 }
