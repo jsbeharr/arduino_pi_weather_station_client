@@ -1,0 +1,7 @@
+@import "../sass_util/variables";
+@import '../sass_util/base';
+
+.content {
+  display: grid;
+  grid-template-columns: $grid-column-responsive;
+}

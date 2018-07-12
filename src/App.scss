@@ -1,25 +1,26 @@
 @import "sass_util/variables";
 @import 'sass_util/base';
 
-.info_panel {
-  p {
+nav {
+  p, a {
     display: inline;
     font-size: 1.5em;
     margin: 1.5em;
+    color: $secondary-color;
+  }
+  a {
+    text-decoration: none;
+
+  }
+  img {
+    max-width: 30px; 
+    max-height: 30px;
+  }
+  #info_panel {
+    float: right;
+    text-align: right;
   }
   display: block;
-  padding: .4em 2.5em;
-  text-align: right;
-  color: $secondary-color;
+  padding: .4em 0;
   background-color: $side-container-color;
-}
-
-#git_lab {
-  max-width: 30px; 
-  max-height: 30px;
-}
-
-.content {
-  display: grid;
-  grid-template-columns: $grid-column-responsive;
 }

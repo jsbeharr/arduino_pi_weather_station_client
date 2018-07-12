@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import './App.css';
 import git_lab_logo from './images/git_lab_logo.png';
 import weather_wind from './images/weather-wind.png';
-import Banner from './Banner/Banner';
-import WeatherBox from './WeatherBox/WeatherBox';
-import DetailBox from './DetailBox/DetailBox';
+import Home from './Home/Home';
 
 class App extends Component {
 
@@ -21,27 +20,35 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
-        <div className='info_panel'>
-          <p>About</p>
-          <a 
-            href='https://gitlab.eecs.umich.edu/rubinz/arduino_pi_weather_station'
-            target='_blank'
-            rel='noopener noreferrer' >
-            <img 
-              id='git_lab' 
-              src={git_lab_logo}
-              alt='git lab icon'  /> 
-          </a>
+      <Router>
+        <div className='App'>
+          <nav>
+            <Link to='/home'>Home</Link>
+            <Link to='/detail'>Detail</Link>
+            <div id='info_panel'>
+              <p>About</p>
+              <a 
+                href='https://gitlab.eecs.umich.edu/rubinz/arduino_pi_weather_station'
+                target='_blank'
+                rel='noopener noreferrer' >
+                <img 
+                  src={git_lab_logo}
+                  alt='git lab icon'  /> 
+              </a>
+            </div>
+          </nav>
+          <div className="content">
+            <Route 
+                path='/home' 
+                render={ 
+                  (props) => <Home 
+                    image={this.state.weather_image}
+                    current_weather={this.state.weather_now} />
+                    } />
+            <Redirect from='/' to='/home' />
+          </div>
         </div>
-        <Banner 
-          image={this.state.weather_image}  />
-        <div className="content">
-          <WeatherBox
-            current_weather={this.state.weather_now}  />
-          <DetailBox />
-        </div>
-      </div>
+      </Router>
     );
   };
 }
