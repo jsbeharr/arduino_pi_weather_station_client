@@ -23,7 +23,7 @@ class App extends Component {
 
   toggleResponsiveMenu = () => {
     let x = document.getElementById('topnav');
-    x.className = x.className==="" ? "responsive" : "";
+    x.className = x.className==='' ? 'responsive' : '';
   }
 
   render() {
@@ -48,7 +48,7 @@ class App extends Component {
             <Route 
                 path='/home' 
                 render={ 
-                  (props) => <Home 
+                  () => <Home 
                     image={this.state.weather_image}
                     current_weather={this.state.weather_now} />
                     } />
@@ -57,7 +57,7 @@ class App extends Component {
         </div>
       </Router>
     );
-  };
+  }
 }
 
 export default App;

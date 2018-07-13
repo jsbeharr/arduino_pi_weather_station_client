@@ -8,7 +8,7 @@ import {
   LineMarkSeries,
 } from 'react-vis';
 
-const detail_box = (props) => {
+const detail_box = () => {
   return (
     <div className='WeatherBox'>
       <div className='card'>

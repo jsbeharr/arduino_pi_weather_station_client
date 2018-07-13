@@ -1,5 +1,5 @@
 import React from 'react';
-import './WeatherBox.css'
+import './WeatherBox.css';
 const moment = require('moment');
 
 const weather_box = (props) => {
