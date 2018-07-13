@@ -11,6 +11,9 @@ nav {
   a {
     text-decoration: none;
   }
+  a:hover, svg:hover {
+    color: $secondary-text-color;
+  }
   img {
     max-width: 30px; 
     max-height: 30px;
