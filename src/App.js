@@ -4,6 +4,8 @@ import './App.css';
 import git_lab_logo from './images/git_lab_logo.png';
 import weather_wind from './images/weather-wind.png';
 import Home from './Home/Home';
+import FaAlignRight from 'react-icons/lib/fa/align-right';
+
 
 class App extends Component {
 
@@ -18,26 +20,34 @@ class App extends Component {
     'weather_image' :   weather_wind,
   };
 
+  toggleResponseBar = () => {
+    let x = document.getElementById('topnav');
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+  }
+
   render() {
     return (
       <Router>
         <div className='App'>
-          <nav>
+          <nav id='topnav'>
+            <a 
+              href='https://gitlab.eecs.umich.edu/rubinz/arduino_pi_weather_station'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <img 
+                src={git_lab_logo}
+                alt='git lab icon' />
+            </a>
             <Link to='/home'>Home</Link>
             <Link to='/detail'>Detail</Link>
-            <div id='info_panel'>
-              <p>About</p>
-              <a 
-                href='https://gitlab.eecs.umich.edu/rubinz/arduino_pi_weather_station'
-                target='_blank'
-                rel='noopener noreferrer' >
-                <img 
-                  src={git_lab_logo}
-                  alt='git lab icon'  /> 
-              </a>
-            </div>
+            <Link to='/about'>About</Link>
+            <FaAlignRight onClick={this.toggleResponseBar} />
           </nav>
-          <div className="content">
+          <div className="page-content">
             <Route 
                 path='/home' 
                 render={ 

@@ -2,25 +2,46 @@
 @import 'sass_util/base';
 
 nav {
-  p, a {
+  p, a, svg {
     display: inline;
     font-size: 1.5em;
-    margin: 1.5em;
+    margin: .2em 1.5em;
     color: $secondary-color;
   }
   a {
     text-decoration: none;
-
   }
   img {
     max-width: 30px; 
     max-height: 30px;
   }
-  #info_panel {
+  svg {
     float: right;
-    text-align: right;
+    display: none;
   }
   display: block;
   padding: .4em 0;
   background-color: $side-container-color;
+}
+
+@media screen and (max-width: 600px) {
+  nav a:not(:first-child), nav p {display: none;}
+  nav svg {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav.responsive {position: relative;}
+  nav.responsive svg {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
