@@ -23,11 +23,7 @@ class App extends Component {
 
   toggleResponsiveMenu = () => {
     let x = document.getElementById('topnav');
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
+    x.className = x.className==="" ? "responsive" : "";
   }
 
   render() {
