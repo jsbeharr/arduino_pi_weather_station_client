@@ -20,7 +20,8 @@ class App extends Component {
     'weather_image' :   weather_wind,
   };
 
-  toggleResponseBar = () => {
+
+  toggleResponsiveMenu = () => {
     let x = document.getElementById('topnav');
     if (x.className === "topnav") {
         x.className += " responsive";
@@ -45,7 +46,7 @@ class App extends Component {
             <Link to='/home'>Home</Link>
             <Link to='/detail'>Detail</Link>
             <Link to='/about'>About</Link>
-            <FaAlignRight onClick={this.toggleResponseBar} />
+            <FaAlignRight onClick={this.toggleResponsiveMenu} />
           </nav>
           <div className="page-content">
             <Route 

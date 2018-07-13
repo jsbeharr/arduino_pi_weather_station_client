@@ -4,4 +4,6 @@
 .content {
   display: grid;
   grid-template-columns: $grid-column-responsive;
+  min-height: 100%;
+  height: 100%;
 }
