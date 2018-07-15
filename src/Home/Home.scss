@@ -1,9 +1,91 @@
 @import "../sass_util/variables";
 @import '../sass_util/base';
 
-.content {
+/*
+  Styling for Banner Area
+*/
+#weather_img_container {
+  img {
+    display: block;
+    margin: auto;
+    width: 14em;
+    height: 14em;
+  }
+  grid-area: weather_img_container;
+}
+
+#title {
+  grid-area: title;
+}
+
+#location_time { 
+  grid-area: location_time;
+}
+
+.banner_header {
+  padding: 1.5em;
+}
+
+.Banner {
+  background-color: $primary-color;
+  font-size: 1.2em;
   display: grid;
-  grid-template-columns: $grid-column-responsive;
+  // for mobile views stack views
+  grid-template-areas: 
+    "title"
+    "weather_img_container"
+    "location_time"
+}
+
+// On large enough screens show views in a row
+@media only screen and (min-width: 600px)   {
+  .Banner {
+      grid-template-columns: auto auto auto;
+      grid-template-areas:
+        "title  weather_img_container  location_time";
+  }
+}
+
+/*
+  Styling for Weather Box and Graph components
+*/
+#WeatherBox {
+  header p {
+    font-size: 2em;
+    margin: 0;
+  }
+  p {
+    font-size: 1.2em;
+  }
+  grid-area: weather_box
+}
+
+#DetailBox {
+  grid-area: detail_box
+}
+
+.card {
+  box-shadow: $box-shadow;
+  transition: 0.3s;
+  padding: 2em 4em;
+  margin: 2em;
+  overflow: hidden;
+}
+
+.content {
   min-height: 100%;
   height: 100%;
+  display: grid;
+  grid-template-areas: 
+    "weather_box"
+    "detail_box";
+}
+
+// On large enough screens show views in a row
+@media only screen and (min-width: 700px)   {
+  .content {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "weather_box  detail_box";
+  }
 }
