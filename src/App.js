@@ -20,7 +20,6 @@ class App extends Component {
     'weather_image': weather_wind,
   };
 
-
   toggleResponsiveMenu = () => {
     let x = document.getElementById('topnav');
     x.className = x.className === '' ? 'responsive' : '';
