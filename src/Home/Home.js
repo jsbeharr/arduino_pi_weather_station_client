@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Clock from 'react-live-clock';
 import moment from 'moment';
 import {
@@ -11,38 +12,33 @@ import {
 } from 'react-vis';
 import './Home.css';
 
-const home = (props) => {
+class Home extends React.Component {
 
-  const temperature = props.current_weather.temperature;
-  const humidity = props.current_weather.humidity;
-  const pressure = props.current_weather.pressure;
-  const wind_speed = props.current_weather.wind_speed;
-  const image = props.image;
-
-  return (
-    <div className="Home">
-      <div className='banner'>
-        <p id='title' className='banner_header'>Arduino Pi Weather Station</p>
-        <div id='weather_img_container'>
-          <img src={image} alt='weather' />
+  render() {
+    return (
+      <div className="Home">
+        <div className='banner'>
+          <p id='title' className='banner_header'>Arduino Pi Weather Station</p>
+          <div id='weather_img_container'>
+            <img src={this.props.image} alt='weather' />
+          </div>
+          <div id='location_time' className='banner_header'>
+            <p>Ann Arbor, Michigan</p>
+            <Clock format={'h:mm'} ticking timezone={'US/Eastern'} />
+          </div>
         </div>
-        <div id='location_time' className='banner_header'>
-          <p>Ann Arbor, Michigan</p>
-          <Clock format={'h:mm'} ticking={true} timezone={'US/Eastern'} />
-        </div>
-      </div>
-      <div className='content'>
-        <div id='weather_box' className='card'>
+        <div className='content'>
+          <div id='weather_box' className='card'>
             <header>
-              <p>{temperature}&deg;F</p>
+              <p>{this.props.temperature}&deg;F</p>
               <p>{moment().format('dddd')}</p>
               <p>{moment().format('MMMM D, YYYY')}</p>
             </header>
-            <p>Humidity: {humidity}%         </p>
-            <p>Pressure: {pressure} Hg       </p>
-            <p>Wind Speed: {wind_speed} m/s  </p>
-        </div>
-        <div id='detail_box' className='card'>
+            <p>Humidity: {this.props.humidity}%         </p>
+            <p>Pressure: {this.props.pressure} Hg       </p>
+            <p>Wind Speed: {this.props.wind_speed} m/s  </p>
+          </div>
+          <div id='detail_box' className='card'>
             <FlexibleXYPlot
               height={300}>
               <VerticalGridLines />
@@ -68,10 +64,27 @@ const home = (props) => {
                   { x: 3, y: 7 }
                 ]} />
             </FlexibleXYPlot>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+}
+
+Home.propTypes = {
+  image: PropTypes.string.isRequired,
+  temperature: PropTypes.number.isRequired,
+  humidity: PropTypes.number.isRequired,
+  pressure: PropTypes.number.isRequired,
+  wind_speed: PropTypes.number.isRequired
 };
 
-export default home;
+Home.defaultProps = {
+  image: '../images/weather-rain-day.png',
+  temperature: 33,
+  humidity: 90,
+  pressure: 42.23,
+  wind_speed: 2.3
+};
+
+export default Home;
