@@ -21,7 +21,7 @@ const home = (props) => {
 
   return (
     <div className="Home">
-      <div className='Banner'>
+      <div className='banner'>
         <p id='title' className='banner_header'>Arduino Pi Weather Station</p>
         <div id='weather_img_container'>
           <img src={image} alt='weather' />
@@ -32,7 +32,7 @@ const home = (props) => {
         </div>
       </div>
       <div className='content'>
-        <div id='WeatherBox' className='card'>
+        <div id='weather_box' className='card'>
             <header>
               <p>{temperature}&deg;F</p>
               <p>{moment().format('dddd')}</p>
@@ -42,8 +42,9 @@ const home = (props) => {
             <p>Pressure: {pressure} Hg       </p>
             <p>Wind Speed: {wind_speed} m/s  </p>
         </div>
-        <div id='DetailBox' className='card'>
-            <FlexibleXYPlot>
+        <div id='detail_box' className='card'>
+            <FlexibleXYPlot
+              height={300}>
               <VerticalGridLines />
               <HorizontalGridLines />
               <XAxis title='x-axis' />

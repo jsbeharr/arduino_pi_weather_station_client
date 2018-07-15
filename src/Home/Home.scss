@@ -26,7 +26,7 @@
   padding: 1.5em;
 }
 
-.Banner {
+.banner {
   background-color: $primary-color;
   font-size: 1.2em;
   display: grid;
@@ -39,7 +39,7 @@
 
 // On large enough screens show views in a row
 @media only screen and (min-width: 600px)   {
-  .Banner {
+  .banner {
       grid-template-columns: auto auto auto;
       grid-template-areas:
         "title  weather_img_container  location_time";
@@ -49,7 +49,7 @@
 /*
   Styling for Weather Box and Graph components
 */
-#WeatherBox {
+#weather_box {
   header p {
     font-size: 2em;
     margin: 0;
@@ -60,7 +60,7 @@
   grid-area: weather_box
 }
 
-#DetailBox {
+#detail_box {
   grid-area: detail_box
 }
 
