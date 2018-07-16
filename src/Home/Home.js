@@ -17,29 +17,22 @@ import rain from '../images/rain.png';
 
 class Home extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-    let image = clouds;
-    if (props.wetness < 600) {
-      image = rain;
-    } else if (props.wind_speed >= 8){
-      image = wind;
-    }
-
-    this.state = {
-      current_image: image
-    };
-  }
-
   render() {
+
+    // changes image depending on
+    let weather_image = clouds;
+    if (this.props.wetness < 600) {
+      weather_image = rain;
+    } else if (this.props.wind_speed >= 8){
+      weather_image = wind;
+    }
 
     return (
       <div className="Home">
         <div className='banner'>
           <p id='title' className='banner_header'>Arduino Pi Weather Station</p>
           <div id='weather_img_container'>
-            <img src={this.state.current_image} alt='weather' />
+            <img src={weather_image} alt='weather' />
           </div>
           <div id='location_time' className='banner_header'>
             <p>Ann Arbor, Michigan</p>

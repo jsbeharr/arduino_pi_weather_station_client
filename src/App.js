@@ -49,7 +49,8 @@ class App extends Component {
                   temperature={this.state.weather_now.temperature}
                   humidity={this.state.weather_now.humidity}
                   pressure={this.state.weather_now.pressure}
-                  wind_speed={this.state.weather_now.wind_speed} />
+                  wind_speed={this.state.weather_now.wind_speed}
+                  wetness={this.state.weather_now.wetness} />
               }
             />
             <Redirect from='/' to='/home' />
