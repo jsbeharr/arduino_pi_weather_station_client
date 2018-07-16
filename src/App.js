@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import git_lab_logo from './images/git_lab_logo.png';
 import Home from './Home/Home';
@@ -36,14 +36,15 @@ class App extends Component {
 								src={git_lab_logo}
 								alt='git lab icon' />
 						</a>
-						<Link to='/home'>Home</Link>
+						<Link to='/'>Home</Link>
 						<Link to='/detail'>Detail</Link>
 						<Link to='/about'>About</Link>
 						<FaAlignRight onClick={this.toggleResponsiveMenu} />
 					</nav>
 					<div className="page-content">
 						<Route
-							path='/home'
+							exact
+							path='/'
 							render={
 								() => <Home
 									temperature={this.state.weather_now.temperature}
@@ -53,7 +54,6 @@ class App extends Component {
 									wetness={this.state.weather_now.wetness} />
 							}
 						/>
-						<Redirect from='/' to='/home' />
 					</div>
 				</div>
 			</Router>
