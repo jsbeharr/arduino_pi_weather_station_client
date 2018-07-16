@@ -11,16 +11,35 @@ import {
   LineMarkSeries,
 } from 'react-vis';
 import './Home.css';
+import wind from '../images/wind.png';
+import clouds from '../images/clouds.png';
+import rain from '../images/rain.png';
 
 class Home extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    let image = clouds;
+    if (props.wetness < 600) {
+      image = rain;
+    } else if (props.wind_speed >= 8){
+      image = wind;
+    }
+
+    this.state = {
+      current_image: image
+    };
+  }
+
   render() {
+
     return (
       <div className="Home">
         <div className='banner'>
           <p id='title' className='banner_header'>Arduino Pi Weather Station</p>
           <div id='weather_img_container'>
-            <img src={this.props.image} alt='weather' />
+            <img src={this.state.current_image} alt='weather' />
           </div>
           <div id='location_time' className='banner_header'>
             <p>Ann Arbor, Michigan</p>
@@ -76,7 +95,8 @@ Home.propTypes = {
   temperature: PropTypes.number.isRequired,
   humidity: PropTypes.number.isRequired,
   pressure: PropTypes.number.isRequired,
-  wind_speed: PropTypes.number.isRequired
+  wind_speed: PropTypes.number.isRequired,
+  wetness: PropTypes.number.isRequired
 };
 
 Home.defaultProps = {
@@ -84,7 +104,8 @@ Home.defaultProps = {
   temperature: 33,
   humidity: 90,
   pressure: 42.23,
-  wind_speed: 2.3
+  wind_speed: 2.3,
+  wetness: 1024
 };
 
 export default Home;

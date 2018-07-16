@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
 import git_lab_logo from './images/git_lab_logo.png';
-import weather_wind from './images/weather-wind.png';
 import Home from './Home/Home';
 import FaAlignRight from 'react-icons/lib/fa/align-right';
 
@@ -14,10 +13,9 @@ class App extends Component {
       'temperature': 56,
       'humidity': 80,
       'pressure': 20.76,
-      'wind_speed': 3.5,
-      'wetness': 1020,
-    },
-    'weather_image': weather_wind,
+      'wind_speed': 6,
+      'wetness': 1024,
+    }
   };
 
   toggleResponsiveMenu = () => {
@@ -48,7 +46,6 @@ class App extends Component {
               path='/home'
               render={
                 () => <Home
-                  image={this.state.weather_image}
                   temperature={this.state.weather_now.temperature}
                   humidity={this.state.weather_now.humidity}
                   pressure={this.state.weather_now.pressure}
