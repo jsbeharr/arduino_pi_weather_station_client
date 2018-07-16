@@ -37,7 +37,9 @@ class App extends Component {
 								alt='git lab icon' />
 						</a>
 						<Link to='/'>Home</Link>
-						<Link to='/detail'>Detail</Link>
+						<Link to='/analytics'>Analytics</Link>
+						<Link to='/history'>History</Link>
+						<Link to='/export'>Export</Link>
 						<Link to='/about'>About</Link>
 						<FaAlignRight onClick={this.toggleResponsiveMenu} />
 					</nav>

@@ -29,7 +29,7 @@
 
 // on narrower screens removes nav links and displays bars
 // for mobile nav menu
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   #topnav {
     a:not(:first-child), p {
     display: none;
