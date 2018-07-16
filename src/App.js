@@ -13,7 +13,7 @@ class App extends Component {
 			'temperature': 56,
 			'humidity': 80,
 			'pressure': 20.76,
-			'wind_speed': 8,
+			'wind_speed': 6,
 			'wetness': 1024,
 		}
 	};
