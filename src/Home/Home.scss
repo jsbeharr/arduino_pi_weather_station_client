@@ -30,7 +30,7 @@
   background-color: $primary-color;
   font-size: 1.2em;
   display: grid;
-  // for mobile views stack views
+  // for mobile, stack views
   grid-template-areas: 
     "title"
     "weather_img_container"

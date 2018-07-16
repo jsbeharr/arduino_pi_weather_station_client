@@ -8,57 +8,57 @@ import FaAlignRight from 'react-icons/lib/fa/align-right';
 
 class App extends Component {
 
-  state = {
-    'weather_now': {
-      'temperature': 56,
-      'humidity': 80,
-      'pressure': 20.76,
-      'wind_speed': 6,
-      'wetness': 1024,
-    }
-  };
+	state = {
+		'weather_now': {
+			'temperature': 56,
+			'humidity': 80,
+			'pressure': 20.76,
+			'wind_speed': 8,
+			'wetness': 1024,
+		}
+	};
 
-  toggleResponsiveMenu = () => {
-    let x = document.getElementById('topnav');
-    x.className = x.className === '' ? 'responsive' : '';
-  }
+	toggleResponsiveMenu = () => {
+		let x = document.getElementById('topnav');
+		x.className = x.className === '' ? 'responsive' : '';
+	}
 
-  render() {
-    return (
-      <Router>
-        <div className='App'>
-          <nav id='topnav'>
-            <a
-              href='https://gitlab.eecs.umich.edu/rubinz/arduino_pi_weather_station'
-              target='_blank'
-              rel='noopener noreferrer'>
-              <img
-                src={git_lab_logo}
-                alt='git lab icon' />
-            </a>
-            <Link to='/home'>Home</Link>
-            <Link to='/detail'>Detail</Link>
-            <Link to='/about'>About</Link>
-            <FaAlignRight onClick={this.toggleResponsiveMenu} />
-          </nav>
-          <div className="page-content">
-            <Route
-              path='/home'
-              render={
-                () => <Home
-                  temperature={this.state.weather_now.temperature}
-                  humidity={this.state.weather_now.humidity}
-                  pressure={this.state.weather_now.pressure}
-                  wind_speed={this.state.weather_now.wind_speed}
-                  wetness={this.state.weather_now.wetness} />
-              }
-            />
-            <Redirect from='/' to='/home' />
-          </div>
-        </div>
-      </Router>
-    );
-  }
+	render() {
+		return (
+			<Router>
+				<div className='App'>
+					<nav id='topnav'>
+						<a
+							href='https://gitlab.eecs.umich.edu/rubinz/arduino_pi_weather_station'
+							target='_blank'
+							rel='noopener noreferrer'>
+							<img
+								src={git_lab_logo}
+								alt='git lab icon' />
+						</a>
+						<Link to='/home'>Home</Link>
+						<Link to='/detail'>Detail</Link>
+						<Link to='/about'>About</Link>
+						<FaAlignRight onClick={this.toggleResponsiveMenu} />
+					</nav>
+					<div className="page-content">
+						<Route
+							path='/home'
+							render={
+								() => <Home
+									temperature={this.state.weather_now.temperature}
+									humidity={this.state.weather_now.humidity}
+									pressure={this.state.weather_now.pressure}
+									wind_speed={this.state.weather_now.wind_speed}
+									wetness={this.state.weather_now.wetness} />
+							}
+						/>
+						<Redirect from='/' to='/home' />
+					</div>
+				</div>
+			</Router>
+		);
+	}
 }
 
 export default App;

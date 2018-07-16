@@ -1,7 +1,7 @@
 @import "sass_util/variables";
 @import 'sass_util/base';
 
-nav {
+#topnav {
   p, a, svg {
     display: inline;
     font-size: 1.5em;
@@ -27,24 +27,33 @@ nav {
   background-color: $side-container-color;
 }
 
+// on narrower screens removes nav links and displays bars
+// for mobile nav menu
 @media screen and (max-width: 600px) {
-  nav a:not(:first-child), nav p {display: none;}
-  nav svg {
-    float: right;
-    display: block;
+  #topnav {
+    a:not(:first-child), p {
+    display: none;
+    }
+    svg {
+      float: right;
+      display: block;
+    }
   }
 }
 
+// creates mobile navigation screen on bar click
 @media screen and (max-width: 600px) {
-  nav.responsive {position: relative;}
-  nav.responsive svg {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  nav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
+  #topnav.responsive {
+    svg {
+      position: absolute;
+      right: 0;
+      top: 0.25em;
+    }
+    a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    position: relative;
   }
 }
