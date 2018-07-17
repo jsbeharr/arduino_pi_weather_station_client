@@ -15,9 +15,14 @@ import wind from '../images/wind.png';
 import clouds from '../images/clouds.png';
 import rain from '../images/rain.png';
 
+const MSEC_DAILY = 86400000;
+
 class Home extends React.Component {
 
 	render() {
+
+		// a timestamp just for templating graph
+		const timestamp = new Date('September 9 2017').getTime();
 
 		// styling dependent on certain weather
 		let style = {
@@ -59,28 +64,25 @@ class Home extends React.Component {
 					</div>
 					<div id='detail_box' className='card'>
 						<FlexibleXYPlot
+							xType="time"
 							height={300}>
 							<VerticalGridLines />
 							<HorizontalGridLines />
-							<XAxis title='x-axis' />
-							<YAxis title='y-axis' />
-							<LineMarkSeries
-								className="linemark-series-example"
-								style={{
-									stroke: 'white'
-								}}
-								data={[
-									{ x: 1, y: 10 },
-									{ x: 2, y: 5 },
-									{ x: 3, y: 15 }
-								]} />
+							<XAxis title='Time' />
+							<YAxis title='Temperature (&deg;F)' />
 							<LineMarkSeries
 								className="linemark-series-example-2"
 								curve={'curveMonotoneX'}
 								data={[
-									{ x: 1, y: 11 },
-									{ x: 1.5, y: 29 },
-									{ x: 3, y: 7 }
+									{x: timestamp + MSEC_DAILY, y: 86},
+									{x: timestamp + MSEC_DAILY * 2, y: 84},
+									{x: timestamp + MSEC_DAILY * 3, y: 97},
+									{x: timestamp + MSEC_DAILY * 4, y: 100},
+									{x: timestamp + MSEC_DAILY * 5, y: 93},
+									{x: timestamp + MSEC_DAILY * 6, y: 88},
+									{x: timestamp + MSEC_DAILY * 7, y: 85},
+									{x: timestamp + MSEC_DAILY * 8, y: 80},
+									{x: timestamp + MSEC_DAILY * 9, y: this.props.temperature},
 								]} />
 						</FlexibleXYPlot>
 					</div>

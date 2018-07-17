@@ -39,10 +39,7 @@
       display: block;
     }
   }
-}
-
-// creates mobile navigation screen on bar click
-@media screen and (max-width: 600px) {
+  // creates mobile navigation screen on bar click
   #topnav.responsive {
     svg {
       position: absolute;

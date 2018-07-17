@@ -10,7 +10,7 @@ class App extends Component {
 
 	state = {
 		'weather_now': {
-			'temperature': 56,
+			'temperature': 88,
 			'humidity': 80,
 			'pressure': 20.76,
 			'wind_speed': 6,
