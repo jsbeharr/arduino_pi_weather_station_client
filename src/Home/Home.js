@@ -93,7 +93,6 @@ class Home extends React.Component {
 }
 
 Home.propTypes = {
-	image: PropTypes.string.isRequired,
 	temperature: PropTypes.number.isRequired,
 	humidity: PropTypes.number.isRequired,
 	pressure: PropTypes.number.isRequired,
@@ -102,7 +101,6 @@ Home.propTypes = {
 };
 
 Home.defaultProps = {
-	image: '../images/weather-rain-day.png',
 	temperature: 33,
 	humidity: 90,
 	pressure: 42.23,
