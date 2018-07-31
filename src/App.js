@@ -43,7 +43,7 @@ class App extends Component {
 						<Link to='/about'>About</Link>
 						<FaAlignRight onClick={this.toggleResponsiveMenu} />
 					</nav>
-					<div className="page-content">
+					<div className='page-content'>
 						<Route
 							exact
 							path='/'
