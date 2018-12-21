@@ -19,6 +19,45 @@ const MSEC_DAILY = 86400000;
 
 class Home extends React.Component {
 
+	constructor(props) {
+		super(props);
+		this.state = { temperatures: [
+			Math.floor((Math.random() * 100) + 1),
+			Math.floor((Math.random() * 100) + 1),
+			Math.floor((Math.random() * 100) + 1),
+			Math.floor((Math.random() * 100) + 1),
+			Math.floor((Math.random() * 100) + 1),
+			Math.floor((Math.random() * 100) + 1),
+			Math.floor((Math.random() * 100) + 1),
+			Math.floor((Math.random() * 100) + 1),
+			Math.floor((Math.random() * 100) + 1)
+		] };
+	}
+
+	refreshData() {
+		this.setState(prevState => ({
+			temperatures: [
+				prevState.temperatures[1],
+				prevState.temperatures[2],
+				prevState.temperatures[3],
+				prevState.temperatures[4],
+				prevState.temperatures[5],
+				prevState.temperatures[6],
+				prevState.temperatures[7],
+				prevState.temperatures[8],
+				Math.floor((Math.random() * 100) + 1)
+			]
+		}));
+	}
+
+	componentDidMount() {
+		this.interval = setInterval(() => this.refreshData(), 1000);
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.interval);
+	}
+
 	render() {
 
 		// a timestamp just for templating graph
@@ -74,15 +113,15 @@ class Home extends React.Component {
 								className="linemark-series-example-2"
 								curve={'curveMonotoneX'}
 								data={[
-									{x: timestamp + MSEC_DAILY, y: 86},
-									{x: timestamp + MSEC_DAILY * 2, y: 84},
-									{x: timestamp + MSEC_DAILY * 3, y: 97},
-									{x: timestamp + MSEC_DAILY * 4, y: 100},
-									{x: timestamp + MSEC_DAILY * 5, y: 93},
-									{x: timestamp + MSEC_DAILY * 6, y: 88},
-									{x: timestamp + MSEC_DAILY * 7, y: 85},
-									{x: timestamp + MSEC_DAILY * 8, y: 80},
-									{x: timestamp + MSEC_DAILY * 9, y: this.props.temperature},
+									{x: timestamp + MSEC_DAILY, y: this.state.temperatures[0]},
+									{x: timestamp + MSEC_DAILY * 2, y: this.state.temperatures[1]},
+									{x: timestamp + MSEC_DAILY * 3, y: this.state.temperatures[2]},
+									{x: timestamp + MSEC_DAILY * 4, y: this.state.temperatures[3]},
+									{x: timestamp + MSEC_DAILY * 5, y: this.state.temperatures[4]},
+									{x: timestamp + MSEC_DAILY * 6, y: this.state.temperatures[5]},
+									{x: timestamp + MSEC_DAILY * 7, y: this.state.temperatures[6]},
+									{x: timestamp + MSEC_DAILY * 8, y: this.state.temperatures[7]},
+									{x: timestamp + MSEC_DAILY * 9, y: this.state.temperatures[8]},
 								]} />
 						</FlexibleXYPlot>
 					</div>
